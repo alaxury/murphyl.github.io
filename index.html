@@ -177,10 +177,12 @@ layout: nil
 </div>
 <script src="/assets/js/vue.min.js"></script>
 <script>
-	(function(a, w){
-		w.snippets = a;var _ = function(c, u){if(a.hasOwnProperty(c)){a[c].push(u);} else {a[c] = [u];}};
+	(function(){
+		var snippets = {};var _ = function(c, u){if(snippets.hasOwnProperty(c)){snippets[c].push(u);} else {snippets[c] = [u];}};
 		{% for item in site.pages %}{% if item.url contains 'snippets' %}_("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}
-	})({}, window);
+		
+		console.log(JSON.stringify(snippets, null, '\t'));
+	})();
 </script>
 </body>
 </html>
