@@ -183,9 +183,7 @@ layout: nil
 		  methods: {
 		    greet: function (key) {
 		      // 方法内 `this` 指向 vm
-		      alert('Hello ' + key + '!')
-		      // `event` 是原生 DOM 事件
-		      alert(event.target.tagName)
+		      alert('Hello ' + key.name + '!')
 		    }
 		  }
 		})
