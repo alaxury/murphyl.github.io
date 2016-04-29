@@ -22,6 +22,11 @@
         el: '#list',
         data: {
             snippets: snippets[cats[0].name]
+        },
+        methods: {
+            show: function (snippet) {
+                renderWhiteBoard(snippet);
+            }
         }
     });
     var main;
@@ -30,15 +35,13 @@
             // console.log(res)
             // document.querySelector('#whiteboard').innerHTML = res;
             if(main){
-                main.$set('title', snippet.title);
-                main.$set('path', snippet.path);
+                main.$set('snippet', snippet.title);
                 main.$set('content', res);
             } else {
                 main = new Vue({
                     el: '#main',
                     data: {
-                        title: snippet.title,
-                        path: snippet.path,
+                        snippet: snippet,
                         content: res
                     },
                 });
