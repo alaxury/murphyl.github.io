@@ -4,15 +4,14 @@
  */
 body {
     color: #333;
+    font-family: punctuation,"PingFangSC-Regular","Microsoft Yahei","sans-serif";;
 }
-
 
 
 a {
     text-decoration: none;
     color: #1b98f8;
 }
-
 
 /*
  * -- HELPER STYLES --
