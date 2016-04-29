@@ -1,6 +1,6 @@
 (function () {
     var calcWindowSize = function () {
-        var mw = $('body').offsetWidth - $('#nav').offsetWidth - $('#list').offsetWidth;
+        var mw = document.querySelector('body').offsetWidth - document.querySelector('#nav').offsetWidth - document.querySelector('#list').offsetWidth;
         document.querySelector('#main').setAttribute('style', 'width:' + mw + 'px');
     };
     window.onresize = calcWindowSize;
