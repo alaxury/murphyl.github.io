@@ -3,7 +3,7 @@ title: 乘法口诀
 ---
 
 ```sql
-/** 乘法口诀 **/
+/** 乘法口诀 - for...lop... **/
 declare                   -- 定义语句
   a number := 0;           -- 数据初始化
   --b number := 0;
@@ -20,7 +20,10 @@ begin
 end;
 ```
 
+===
+
 ```sql
+/** 乘法口诀 - while...lop... **/
 declare                   -- 定义语句
   a number := 0;           -- 数据初始化
   b number := 0;
