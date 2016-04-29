@@ -24,7 +24,7 @@ layout: nil
 					assets[category] = [url];
 				}
 			};
-			{% for item in site.pages %}{% if item.url contains 'snippets' %}add("{{ item.dir | replace: '/snippets/', '' }}", "item.url"){% endif %}{% endfor%}
+			{% for item in site.pages %}{% if item.url contains 'snippets' %}add("{{ item.dir | replace: '/snippets/', '' }}", "{{ item.url }}"){% endif %}{% endfor%}
 			window.assets = assets;
 		})({});
 	</script>
