@@ -20,7 +20,7 @@ begin
 end;
 ```
 
-===
+<hr>
 
 ```sql
 /** 乘法口诀 - while...lop... **/
