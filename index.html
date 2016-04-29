@@ -100,17 +100,20 @@ layout: nil
 		  methods: {
 		    greet: function (key) {
 		      // 方法内 `this` 指向 vm
-		      current = snippets[key];
-		      console.log(JSON.stringify(current, null, '\t'));
+		      list(snippets[key]);
+		      console.log(JSON.stringify(snippets[key], null, '\t'));
 		    }
 		  }
 		});
-		new Vue({
-		  el: '#list',
-		  data: {
-		    snippets: current
-		  }
-		})
+		var list = function(data){
+			new Vue({
+			  el: '#list',
+			  data: {
+			    snippets: data
+			  }
+			})
+		}
+		list(snippets[cats[0].name]);
 		console.log(JSON.stringify(snippets, null, '\t'));
 		console.log(JSON.stringify({data: {
 		    cats: cats
