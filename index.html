@@ -78,16 +78,7 @@ layout: nil
 </div>
 <script src="/assets/js/vue.min.js"></script>
 <script>
-    var snippets = {}, cats = [];
-    var group = function (c, u) {
-        if (snippets.hasOwnProperty(c)) {
-            snippets[c].push(u);
-        } else {
-            cats.push({name: c});
-            snippets[c] = [u];
-        }
-    };
-    {% for item in site.pages %}{% if item.url contains 'snippets' %}group("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}
+    {% for item in site.pages %}{% if item.url contains 'snippets' %}group("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}init();
 </script>
 <script src="/assets/js/app.js"></script>
 </body>

@@ -1,4 +1,13 @@
-(function () {
+var snippets = {}, cats = [];
+var group = function (c, u) {
+    if (snippets.hasOwnProperty(c)) {
+        snippets[c].push(u);
+    } else {
+        cats.push({name: c});
+        snippets[c] = [u];
+    }
+};
+var init = function () {
     /*var calcWindowSize = function () {
         var mw = document.querySelector('body').offsetWidth - document.querySelector('#nav').offsetWidth - document.querySelector('#list').offsetWidth;
         document.querySelector('#main').setAttribute('style', 'width:' + mw + 'px');
@@ -63,4 +72,4 @@
             }
         }
     });
-})()
+}
