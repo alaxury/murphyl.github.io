@@ -15,12 +15,6 @@ layout: nil
 	<!--[if gt IE 8]><!-->
 	<link rel="stylesheet" href="assets/css/layouts/email.css">
 	<!--<![endif]-->
-	<script>
-		(function(a, w){
-			w.assets = a;var _ = function(c, u){if(a.hasOwnProperty(c)){a[c].push(u);} else {a[c] = [u];}};
-			{% for item in site.pages %}{% if item.url contains 'snippets' %}_("{{ item.dir | replace: '/snippets/', '' }}", "{{ item.url }}");{% endif %}{% endfor%}
-		})({}, window);
-	</script>
 </head>
 <body>
 <div id="layout" class="content pure-g">
@@ -183,8 +177,8 @@ layout: nil
 </div>
 <script>
 	(function(a, w){
-		w.assets = a;var _ = function(c, u){if(a.hasOwnProperty(c)){a[c].push(u);} else {a[c] = [u];}};
-		{% for item in site.pages %}{% if item.url contains 'snippets' %}_("{{ item.dir | replace: '/snippets/', '' }}", "{{ item.url }}");{% endif %}{% endfor%}
+		w.snippets = a;var _ = function(c, u){if(a.hasOwnProperty(c)){a[c].push(u);} else {a[c] = [u];}};
+		{% for item in site.pages %}{% if item.url contains 'snippets' %}_("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}"});{% endif %}{% endfor%}
 	})({}, window);
 </script>
 </body>
