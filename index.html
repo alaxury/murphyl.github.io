@@ -177,7 +177,7 @@ layout: nil
 </div>
 <!--
 
-{% for item in site.pages | where_exp:"item", "item.url != '/'" %}
+{% for item in site.pages | where_exp:"item", "item.url contains  'snippets'" %}
 {{ item.title }} - {{ item.url }} - {{ item.dir | replace: '/snippets/', '' }}
 {% endfor%}
 -->
