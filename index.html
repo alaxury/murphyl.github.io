@@ -109,6 +109,12 @@ layout: nil
 		    greet: function (key) {
 		      // 方法内 `this` 指向 vm
 		      list(snippets[key]);
+		      new Vue({
+			  el: '#list',
+			  data: {
+			    snippets: snippets[key]
+			  }
+			})
 		      console.log(JSON.stringify(snippets[key], null, '\t'));
 		    }
 		  }
