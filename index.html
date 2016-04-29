@@ -39,7 +39,7 @@ layout: nil
         </div>
     </div>
     <div id="list" class="pure-u-1">
-        <div class="email-item email-item-unread pure-g" v-for="snippet in snippets">
+        <div class="email-item email-item-unread pure-g" v-for="snippet in snippets" v-on:click="show(snippet)">
             <!--<div class="pure-u">
                 <img class="email-avatar" alt="Tilo Mitra&#x27;s avatar" height="64" width="64" src="assets/img/common/tilo-avatar.png">
             </div>-->
@@ -54,7 +54,7 @@ layout: nil
     </div>
     <div id="main" class="pure-u-1">
         <div class="email-content">
-            <div class="email-content-header pure-g" v-on:click="show(snippet)">
+            <div class="email-content-header pure-g">
                 <div class="pure-u-1-2">
                     <h1 class="email-content-title">{%raw%} {{ snippet.title }} {%endraw%}</h1>
                     <!--<p class="email-content-subtitle">

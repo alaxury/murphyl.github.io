@@ -35,7 +35,7 @@
             // console.log(res)
             // document.querySelector('#whiteboard').innerHTML = res;
             if(main){
-                main.$set('snippet', snippet.title);
+                main.$set('snippet', snippet);
                 main.$set('content', res);
             } else {
                 main = new Vue({
