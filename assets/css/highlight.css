@@ -1,15 +1,14 @@
 /** Syntax highlighting styles */
-.highlight .c { color: #998; font-style: italic; }
+.highlight .c { color: #998;}
 .highlight .err { color: #a61717; background-color: #e3d2d2; }
 .highlight .k { font-weight: bold; }
 .highlight .o { font-weight: bold; }
-.highlight .cm { color: #998; font-style: italic; }
+.highlight .cm { color: #998; }
 .highlight .cp { color: #999; font-weight: bold; }
-.highlight .c1 { color: #998; font-style: italic; }
-.highlight .cs { color: #999; font-weight: bold; font-style: italic; }
+.highlight .c1 { color: #998; }
+.highlight .cs { color: #999; font-weight: bold; }
 .highlight .gd { color: #000; background-color: #fdd; }
 .highlight .gd .x { color: #000; background-color: #faa; }
-.highlight .ge { font-style: italic; }
 .highlight .gr { color: #a00; }
 .highlight .gh { color: #999; }
 .highlight .gi { color: #000; background-color: #dfd; }
