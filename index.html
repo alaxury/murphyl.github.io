@@ -179,7 +179,7 @@ layout: nil
 <script>
 	(function(a, w){
 		w.snippets = a;var _ = function(c, u){if(a.hasOwnProperty(c)){a[c].push(u);} else {a[c] = [u];}};
-		{% for item in site.pages %}{% if item.url contains 'snippets' %}_("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}"});/** {{ item.dir }}**/{% endif %}{% endfor%}
+		{% for item in site.pages %}{% if item.url contains 'snippets' %}_("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}
 	})({}, window);
 </script>
 </body>
