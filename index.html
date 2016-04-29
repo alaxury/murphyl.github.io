@@ -177,8 +177,8 @@ layout: nil
 <script src="/assets/js/vue.min.js"></script>
 <script>
 	(function(){
-		var snippets = {}, cats = [];var _ = function(c, u){if(snippets.hasOwnProperty(c)){snippets[c].push(u);} else {cats.push({name: c}); snippets[c] = [u];}};
-		{% for item in site.pages %}{% if item.url contains 'snippets' %}_("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}
+		var snippets = {}, cats = []; var group = function(c, u){ if(snippets.hasOwnProperty(c)){snippets[c].push(u);} else {cats.push({name: c}); snippets[c] = [u];}};
+		{% for item in site.pages %}{% if item.url contains 'snippets' %}group("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}
 		new Vue({
 		  el: '#cats',
 		  data: {
@@ -186,7 +186,9 @@ layout: nil
 		  }
 		})
 		console.log(JSON.stringify(snippets, null, '\t'));
-		console.log(JSON.stringify(cats, null, '\t'));
+		console.log(JSON.stringify(data: {
+		    cats: cats
+		  }, null, '\t'));
 	})();
 </script>
 </body>
