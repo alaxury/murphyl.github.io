@@ -180,16 +180,14 @@ layout: nil
 	(function(){
 		var snippets = {};var _ = function(c, u){if(snippets.hasOwnProperty(c)){snippets[c].push(u);} else {snippets[c] = [u];}};
 		{% for item in site.pages %}{% if item.url contains 'snippets' %}_("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}
+		var cats = [];
+	    	for(var i in snippets){
+    			cats.push(i);	
+	    	}
 		new Vue({
 		  el: '#cats',
 		  data: {
-		    cats: function(){
-		    	var keys = [];
-		    	for(var i in snippets){
-		    		keys.push(i);	
-		    	}
-		    	return keys
-		    }
+		    cats: cats
 		  }
 		})
 		console.log(JSON.stringify(snippets, null, '\t'));
