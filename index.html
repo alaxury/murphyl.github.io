@@ -16,8 +16,10 @@ layout: nil
 	<link rel="stylesheet" href="assets/css/layouts/email.css">
 	<!--<![endif]-->
 	<script>
-		var cats = [];
-		{% for item in site.pages %}{% if item.url contains 'snippets' %}cats.push("{{ item.dir | replace: '/snippets/', '' }}"){% endif %}{% endfor%}
+		(function(cats){
+			{% for item in site.pages %}{% if item.url contains 'snippets' %}cats.push("{{ item.dir | replace: '/snippets/', '' }}"){% endif %}{% endfor%}
+			window.categories = cats;
+		})([]);
 	</script>
 </head>
 <body>
