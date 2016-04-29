@@ -1,9 +1,11 @@
 ---
 title: 媒体查询
 ---
--- oracle pl/sql
 
--- 乘法口诀
+oracle pl/sql
+
+乘法口诀
+
 ```sql
 declare                   -- 定义语句
   a number := 0;           -- 数据初始化
