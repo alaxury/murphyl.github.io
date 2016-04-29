@@ -24,13 +24,15 @@ layout: nil
             <button class="primary-button pure-button">Compose</button>
             <div class="pure-menu">
                 <ul class="pure-menu-list" id="cats">
-                    <li class="pure-menu-item" v-for="cat in cats" v-on:click="greet(cat.name)"><a href="#"
-                                                                                                   class="pure-menu-link">{%raw%}
-                        {{ cat.name }} {%endraw%}<span class="email-count">(2)</span></a></li>
+                    <li class="pure-menu-item" v-for="cat in cats" v-on:click="greet(cat.name)">
+                        <a href="#" class="pure-menu-link">{%raw%}{{ cat.name }}{%endraw%}</a>
+                    </li>
                     <li class="pure-menu-heading">Links</li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span
-                            class="email-label-personal"></span>Blog</a></li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span class="email-label-work"></span>About</a>
+                    <li class="pure-menu-item">
+                        <a href="#" class="pure-menu-link"><span class="email-label-personal"></span>Blog</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="#" class="pure-menu-link"><span class="email-label-work"></span>About</a>
                     </li>
                 </ul>
             </div>
