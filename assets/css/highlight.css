@@ -1,5 +1,5 @@
 /** Syntax highlighting styles */
-.highlight { font-family: punctuation,"PingFangSC-Regular","Microsoft Yahei","sans-serif" !important; }
+.highlight { font-family: punctuation,"PingFangSC-Regular","Microsoft Yahei","sans-serif" !important; font-size: 1.3rem; }
 .highlight .c { color: #998;}
 .highlight .err { color: #a61717; background-color: #e3d2d2; }
 .highlight .k { font-weight: bold; }
