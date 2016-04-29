@@ -18,13 +18,13 @@
             snippets: snippets[cats[0].name]
         }
     });
-    var renderWhiteBoard = function (key) {
-        get(list.snippets[key][0].url, function (res) {
+    var renderWhiteBoard = function (url) {
+        get(url, function (res) {
             // console.log(res)
             document.querySelector('#whiteboard').innerHTML = res;
         });
     };
-    renderWhiteBoard(cats[0].name);
+    renderWhiteBoard(snippets[cats[0].name][0].url);
     new Vue({
         el: '#cats',
         data: {
@@ -34,7 +34,7 @@
             greet: function (key) {
                 // 方法内 `this` 指向 vm
                 list.snippets = snippets[key];
-                renderWhiteBoard(key);
+                renderWhiteBoard(snippets[key][0].url);
             }
         }
     });
