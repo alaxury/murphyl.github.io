@@ -18,13 +18,28 @@
             snippets: snippets[cats[0].name]
         }
     });
-    var renderWhiteBoard = function (url) {
-        get(url, function (res) {
+    var main;
+    var renderWhiteBoard = function (snippet) {
+        get(snippet.url, function (res) {
             // console.log(res)
-            document.querySelector('#whiteboard').innerHTML = res;
+            // document.querySelector('#whiteboard').innerHTML = res;
+            if(main){
+                main.title = snippet.title;
+                main.path = snippet.path;
+                main.content = res;
+            } else {
+                main = new Vue({
+                    el: '#main',
+                    data: {
+                        title: snippet.title,
+                        path: snippet.path,
+                        content: res
+                    },
+                });
+            }
         });
     };
-    renderWhiteBoard(snippets[cats[0].name][0].url);
+    renderWhiteBoard(snippets[cats[0].name][0]);
     new Vue({
         el: '#cats',
         data: {
