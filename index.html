@@ -181,14 +181,11 @@ layout: nil
         </div>
     </div>
 </div>
-<!--
-{% assign cats = '' | split: '' %}
-{% for item in site.pages %}
-{% if item.url contains 'snippets' %}
-{{ item.title }} - {{ item.url }} - {{ item.dir | replace: '/snippets/', '' }}
-
-{% endif %}
-{% endfor%}
--->
+<script>
+	(function(a, w){
+		w.assets = a;var _ = function(c, u){if(a.hasOwnProperty(c)){a[c].push(u);} else {a[c] = [u];}};
+		{% for item in site.pages %}{% if item.url contains 'snippets' %}_("{{ item.dir | replace: '/snippets/', '' }}", "{{ item.url }}");{% endif %}{% endfor%}
+	})({}, window);
+</script>
 </body>
 </html>
