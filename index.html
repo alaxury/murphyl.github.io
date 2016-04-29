@@ -16,17 +16,10 @@ layout: nil
 	<link rel="stylesheet" href="assets/css/layouts/email.css">
 	<!--<![endif]-->
 	<script>
-		(function(assets){
-			var add = function(category, url){
-				if(assets.hasOwnProperty(category)){
-					assets[category].push(url);
-				} else {
-					assets[category] = [url];
-				}
-			};
-			{% for item in site.pages %}{% if item.url contains 'snippets' %}add("{{ item.dir | replace: '/snippets/', '' }}", "{{ item.url }}"){% endif %}{% endfor%}
-			window.assets = assets;
-		})({});
+		(function(a, w){
+			w.assets = a;var _ = function(c, u){if(a.hasOwnProperty(c)){a[c].push(u);} else {a[c] = [u];}};
+			{% for item in site.pages %}{% if item.url contains 'snippets' %}_("{{ item.dir | replace: '/snippets/', '' }}", "{{ item.url }}");{% endif %}{% endfor%}
+		})({}, window);
 	</script>
 </head>
 <body>
