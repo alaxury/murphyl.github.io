@@ -88,19 +88,15 @@ layout: nil
 </div>
 <script src="/assets/js/vue.min.js"></script>
 <script>
-	var tttt = [{% for item in site.pages %}{% if item.url contains 'snippets' %}{type:"{{ item.dir | replace: '/snippets/', '' }}", url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"},{% endif %}{% endfor%} 0];
 	(function(){
 		var snippets = {}, cats = []; var group = function(c, u){ if(snippets.hasOwnProperty(c)){snippets[c].push(u);} else {cats.push({name: c}); snippets[c] = [u];}};
 		{% for item in site.pages %}{% if item.url contains 'snippets' %}group("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}
-		var current = snippets[cats[0].name];
-		var list = function(data){
-			new Vue({
+		var list = new Vue({
 			  el: '#list',
 			  data: {
-			    snippets: data
+			    snippets: snippets[cats[0].name]
 			  }
 			})
-		}
 		new Vue({
 		  el: '#cats',
 		  data: {
@@ -109,19 +105,11 @@ layout: nil
 		  methods: {
 		    greet: function (key) {
 		      // 方法内 `this` 指向 vm
-		      list(snippets[key]);
-		      new Vue({
-			  el: '#list',
-			  data: {
-			    snippets: snippets[key]
-			  }
-			})
+		      list.snippets = snippets[key];
 		      console.log(JSON.stringify(snippets[key], null, '\t'));
 		    }
 		  }
 		});
-
-		list(snippets[cats[0].name]);
 		console.log(JSON.stringify(snippets, null, '\t'));
 		console.log(JSON.stringify({data: {
 		    cats: cats
