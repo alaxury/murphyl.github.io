@@ -249,6 +249,10 @@ a {
 
 }
 
+#main {
+    width: 100%;
+}
+
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --
  * On desktops and other large-sized devices, we want to customize some
