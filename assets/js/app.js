@@ -24,9 +24,9 @@
             // console.log(res)
             // document.querySelector('#whiteboard').innerHTML = res;
             if(main){
-                main.$set(title, snippet.title);
-                main.$set(path, snippet.path);
-                main.$set(content, res);
+                main.$set('title', snippet.title);
+                main.$set('path', snippet.path);
+                main.$set('content', res);
             } else {
                 main = new Vue({
                     el: '#main',
