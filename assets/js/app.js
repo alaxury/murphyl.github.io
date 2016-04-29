@@ -17,7 +17,13 @@
         data: {
             snippets: snippets[cats[0].name]
         }
-    })
+    });
+    var renderWhiteBoard = function () {
+        get(list.snippets[key][0].url, function (res) {
+            // console.log(res)
+            document.querySelector('#whiteboard').innerHTML = res;
+        });
+    }
     new Vue({
         el: '#cats',
         data: {
@@ -27,17 +33,8 @@
             greet: function (key) {
                 // 方法内 `this` 指向 vm
                 list.snippets = snippets[key];
-                get(snippets[key][0].url, function (res) {
-                    console.log(res)
-                })
-                console.log(JSON.stringify(snippets[key], null, '\t'));
+                renderWhiteBoard();
             }
         }
     });
-    console.log(JSON.stringify(snippets, null, '\t'));
-    console.log(JSON.stringify({
-        data: {
-            cats: cats
-        }
-    }, null, '\t'));
 })()
