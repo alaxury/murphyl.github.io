@@ -15,14 +15,9 @@ layout: nil
 	<!--[if gt IE 8]><!-->
 	<link rel="stylesheet" href="assets/css/layouts/email.css">
 	<!--<![endif]-->
-	<script type="text/data">
-		{% assign cats = '' | split: '' %}
-		{% for item in site.pages %}
-		{% if item.url contains 'snippets' %}
-		"{{ item.dir | replace: '/snippets/', '' }}"
-		
-		{% endif %}
-		{% endfor%}
+	<script>
+		var cats = [];
+		{% for item in site.pages %}{% if item.url contains 'snippets' %}cats.push("{{ item.dir | replace: '/snippets/', '' }}"){% endif %}{% endfor%}
 	</script>
 </head>
 <body>
