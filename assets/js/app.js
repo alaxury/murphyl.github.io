@@ -49,7 +49,7 @@
             greet: function (key) {
                 // 方法内 `this` 指向 vm
                 list.snippets = snippets[key];
-                renderWhiteBoard(snippets[key][0].url);
+                renderWhiteBoard(snippets[key][0]);
             }
         }
     });
