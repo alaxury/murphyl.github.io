@@ -26,6 +26,7 @@
         methods: {
             show: function (snippet) {
                 renderWhiteBoard(snippet);
+                console.log(snippet);
             }
         }
     });
