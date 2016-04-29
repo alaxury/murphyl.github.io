@@ -24,7 +24,7 @@ layout: nil
             <button class="primary-button pure-button">Compose</button>
             <div class="pure-menu">
                 <ul class="pure-menu-list" id="cats">
-                    <li class="pure-menu-item" v-for="cat in cats"><a href="#" class="pure-menu-link">{{ cat.name }} <span class="email-count">(2)</span></a></li>
+                    <li class="pure-menu-item" v-for="cat in cats"><a href="#" class="pure-menu-link">{{ JSON.stringify(cat) }} <span class="email-count">(2)</span></a></li>
                     <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sent</a></li>
                     <li class="pure-menu-item"><a href="#" class="pure-menu-link">Drafts</a></li>
                     <li class="pure-menu-item"><a href="#" class="pure-menu-link">Trash</a></li>
