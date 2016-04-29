@@ -175,6 +175,7 @@ layout: nil
 	(function(){
 		var snippets = {}, cats = []; var group = function(c, u){ if(snippets.hasOwnProperty(c)){snippets[c].push(u);} else {cats.push({name: c}); snippets[c] = [u];}};
 		{% for item in site.pages %}{% if item.url contains 'snippets' %}group("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}
+		var defaultView = snippets[cats[0].name];
 		new Vue({
 		  el: '#cats',
 		  data: {
@@ -183,7 +184,7 @@ layout: nil
 		  methods: {
 		    greet: function (key) {
 		      // 方法内 `this` 指向 vm
-		      alert('Hello ' + key.name + '!')
+		      console.log(key.name)
 		    }
 		  }
 		})
