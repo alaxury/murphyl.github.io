@@ -177,12 +177,8 @@ layout: nil
 <script src="/assets/js/vue.min.js"></script>
 <script>
 	(function(){
-		var snippets = {};var _ = function(c, u){if(snippets.hasOwnProperty(c)){snippets[c].push(u);} else {snippets[c] = [u];}};
+		var snippets = {}, cats = [];var _ = function(c, u){if(snippets.hasOwnProperty(c)){snippets[c].push(u);} else {cats.push({name: c}); snippets[c] = [u];}};
 		{% for item in site.pages %}{% if item.url contains 'snippets' %}_("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}
-		var cats = [];
-	    	for(var i in snippets){
-    			cats.push(i);	
-	    	}
 		new Vue({
 		  el: '#cats',
 		  data: {
