@@ -23,9 +23,9 @@ layout: nil
         <div class="nav-inner">
             <button class="primary-button pure-button">Compose</button>
             <div class="pure-menu">
-                <ul class="pure-menu-list">
+                <ul class="pure-menu-list" id="cats">
                     <li class="pure-menu-item"><a href="#" class="pure-menu-link">代码片段<span class="email-count">(2)</span></a></li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">其他配置</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link" v-for="cat in cats">其他配置</a></li>
                     <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sent</a></li>
                     <li class="pure-menu-item"><a href="#" class="pure-menu-link">Drafts</a></li>
                     <li class="pure-menu-item"><a href="#" class="pure-menu-link">Trash</a></li>
@@ -181,7 +181,7 @@ layout: nil
 		var snippets = {};var _ = function(c, u){if(snippets.hasOwnProperty(c)){snippets[c].push(u);} else {snippets[c] = [u];}};
 		{% for item in site.pages %}{% if item.url contains 'snippets' %}_("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}
 		new Vue({
-		  el: '#app',
+		  el: '#cats',
 		  data: {
 		    cats: function(){
 		    	var keys = [];
