@@ -1,4 +1,10 @@
 (function () {
+    var calcWindowSize = function () {
+        var mw = $('body').offsetWidth - $('#nav').offsetWidth - $('#list').offsetWidth;
+        document.querySelector('#main').setAttribute('style', 'width:' + mw + 'px');
+    };
+    window.onresize = calcWindowSize;
+    calcWindowSize();
     var xhq = new XMLHttpRequest();
 
     var get = function (url, callback) {
