@@ -157,7 +157,7 @@ a {
     background: #eee;
 }
 .email-item-unread {
-    border-left: 6px solid #1b98f8;
+    border-left: 3px solid #1b98f8;
 }
 
 /* Email Content Styles */
