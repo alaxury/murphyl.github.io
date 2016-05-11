@@ -1,5 +1,6 @@
 ---
 title: Linux 下常用压缩文件的解压、压缩
+referer: https://raw.githubusercontent.com/judasn/Linux-Tutorial/master/File-Extract-Compress.md
 ---
 
 # Linux 下常用压缩文件的解压、压缩
@@ -77,3 +78,4 @@ title: Linux 下常用压缩文件的解压、压缩
 ## 资料
 
 - <http://forum.ubuntu.org.cn/viewtopic.php?f=50&t=158893>
+- [Referer](https://raw.githubusercontent.com/judasn/Linux-Tutorial/master/File-Extract-Compress.md)
