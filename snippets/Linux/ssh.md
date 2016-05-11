@@ -3,25 +3,27 @@ title: 使用SSH无密码登录远程主机
 ---
 
 
-1. 在本地生成密钥以及文件权限；
+## 1. 在本地生成密钥以及文件权限；
   
-  ```sh
-    ssh-keygen
-    chmod 700 ~/.ssh
-  ```
-2. 上传密钥到远程服务器；
+```sh
+  ssh-keygen
+  chmod 700 ~/.ssh
+```
+
+##  2. 上传密钥到远程服务器；
   
-  ```sh
-    scp ~/.ssh/id_rsa.pub username@remote_host:
-    ssh username@remote_host
-    cat id_rsa.pub >> ~/.ssh/authorized_keys
-  ```
-3. 设置远程文件权限；
+```sh
+  scp ~/.ssh/id_rsa.pub username@remote_host:
+  ssh username@remote_host
+  cat id_rsa.pub >> ~/.ssh/authorized_keys
+```
+
+## 3. 设置远程文件权限；
   
-  ```sh
-    chmod 700 ~/.ssh
-    chmod 600 ~/.ssh/authorized_keys
-  ```
+```sh
+  chmod 700 ~/.ssh
+  chmod 600 ~/.ssh/authorized_keys
+```
 
 ---
 
