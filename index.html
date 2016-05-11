@@ -83,7 +83,7 @@ layout: nil
 <script src="/assets/js/vue.min.js"></script>
 <script src="/assets/js/app.js"></script>
 <script>
-    {% for item in site.pages %}{% if item.url contains 'snippets' %}group("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}init();
+    {% for item in site.pages | sort: 'dir' %}{% if item.url contains 'snippets' %}group("{{ item.dir | replace: '/snippets/', '' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}init();
 </script>
 </body>
 </html>
