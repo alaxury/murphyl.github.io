@@ -3,8 +3,6 @@ title: 常用压缩文件的解压、压缩
 referer: https://raw.githubusercontent.com/judasn/Linux-Tutorial/master/File-Extract-Compress.md
 ---
 
-# Linux 下常用压缩文件的解压、压缩
-
 ## 常用压缩包**解压**命令整理
 
 - Linux 后缀为 `.tar.gz` 格式的文件-解压
