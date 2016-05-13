@@ -7,12 +7,12 @@
   <title>Email &ndash; Layout Examples &ndash; Pure</title>
   <link rel="stylesheet" href="assets/css/pure-min.css">
   <link rel="stylesheet" href="assets/css/highlight.css">
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="assets/css/layouts/email-old-ie.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="assets/css/layouts/email.css">
-  <!--<![endif]-->
 </head>
 {{ content }}
+<script src="/assets/js/vue.min.js"></script>
+<script src="/assets/js/app.js"></script>
+<script>init({% for item in site.pages %} {% unless item.dir contains "snippets" %} {% continue %} {% endunless %}
+  ['{{ item.title }}', '{{ item.url }}', '{{ item.path }}', '{{ item.dir | remove: "/" | remove: "snippets" }}'], {% endfor%}
+0 )</script>
+</body>
 </html>

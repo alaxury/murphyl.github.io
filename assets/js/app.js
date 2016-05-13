@@ -12,7 +12,11 @@ var init = function () {
   };
   // 分组数据
   Array.from(arguments).forEach(function(ele, idx){
-      ele && group(ele.category, ele.details, idx);
+      ele && group(ele[3], {
+          title: ele[0],
+          url: ele[1],
+          path: ele[2]
+      } , idx);
   });
 
   // ajax
@@ -35,7 +39,7 @@ var init = function () {
       methods: {
           show: function (snippet) {
               renderWhiteBoard(snippet);
-              console.log(snippet);
+              // console.log(snippet);
           }
       }
   });

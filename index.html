@@ -3,10 +3,6 @@ layout: default
 ---
 
 <body>
-<!--
-<div id="mask">
-    <img src="assets/img/reload.svg" alt="">
-</div>-->
 <div id="layout" class="content pure-g">
     <div id="nav" class="pure-u">
         <a href="#" class="nav-menu-button">Menu</a>
@@ -30,15 +26,8 @@ layout: default
     </div>
     <div id="list" class="pure-u-1">
         <div class="email-item email-item-unread pure-g" v-for="snippet in snippets" v-on:click="show(snippet)">
-            <!--<div class="pure-u">
-                <img class="email-avatar" alt="Tilo Mitra&#x27;s avatar" height="64" width="64" src="assets/img/common/tilo-avatar.png">
-            </div>-->
             <div class="pure-u-3-4">
-                <!--<h5 class="email-name">Tilo Mitra</h5>-->
                 <h4 class="email-subject">{%raw%} {{ snippet.title }} {%endraw%}</h4>
-                <!--<p class="email-desc">
-                    Hey, I just wanted to check in with you from Toronto. I got here earlier today.
-                </p>-->
             </div>
         </div>
     </div>
@@ -65,16 +54,3 @@ layout: default
         </div>
     </div>
 </div>
-<script src="/assets/js/vue.min.js"></script>
-<script src="/assets/js/app.js"></script>
-<!--<script>
-    {% for item in site.pages | sort: 'dir' %}{% if item.url contains 'snippets' %}group("{{ item.dir | remove: '/snippets/' | remove: '/' }}", {url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}"});{% endif %}{% endfor%}init();
-</script>-->
-<script>init(
-  {% for item in site.pages | sort: 'dir' %}{% unless item.url contains 'snippets' %}{% continue %}{% endunless %}{
-    category: "{{ item.dir | remove: '/snippets/' | remove: '/' }}",
-    details: { url: "{{ item.url }}", title: "{{ item.title }}", path: "{{ item.dir }}" }
-  }, {% endfor%} 0
-)</script>
-</body>
-
