@@ -1,22 +1,15 @@
 var init = function () {
-  // 数据
-  var snippets = {}, cats = [];
-  // 分组逻辑
-  var group = function (c, u) {
-      if (snippets.hasOwnProperty(c)) {
-          snippets[c].push(u);
-      } else {
-          cats.push({name: c});
-          snippets[c] = [u];
-      }
-  };
-  // 分组数据
-  Array.from(arguments).forEach(function(ele, idx){
-      ele && group(ele[3], {
-          title: ele[0],
-          url: ele[1],
-          path: ele[2]
-      } , idx);
+
+  var snippets = Array.from(arguments).filter(function(ele){
+      return ele;
+  }).map(function(ele, index){
+    return {
+      index: index,
+      title: ele[0],
+      url: ele[1],
+      path: ele[2],
+      category: ele[3]
+    }
   });
 
   // ajax
@@ -30,47 +23,29 @@ var init = function () {
       xhq.open('GET', url, true);
       xhq.send();
   };
-
-  var list = new Vue({
-      el: '#list',
-      data: {
-          snippets: snippets[cats[0].name]
-      },
-      methods: {
-          show: function (snippet) {
-              renderWhiteBoard(snippet);
-              // console.log(snippet);
-          }
-      }
-  });
-  var main;
-  var renderWhiteBoard = function (snippet) {
-      get(snippet.url, function (res) {
-          if(main){
-              main.$set('snippet', snippet);
-              main.$set('content', res);
-          } else {
-              main = new Vue({
-                  el: '#main',
-                  data: {
-                      snippet: snippet,
-                      content: res
-                  },
-              });
-          }
-      });
+  var show = function(snippet, e){
+    var target = e.target,
+        p = (target.nodeName === 'H3' ? target : target.parentElement).nextElementSibling;
+    Array.from(document.querySelectorAll('.visible')).forEach(function(ele){
+      ele.className = ele.className.replace(/visible/g, '');
+    });
+    if(p.getAttribute('data-bind') === 'true'){
+      p.className += ' visible';
+      return;
+    }
+    get(snippet.url, function(text){
+      p.innerHTML = text;
+      p.className += ' visible';
+      p.setAttribute('data-bind', true);
+    });
   };
-  renderWhiteBoard(snippets[cats[0].name][0]);
-  new Vue({
-      el: '#cats',
+  var main = new Vue({
+      el: '#main',
       data: {
-          cats: cats
+          snippets: snippets
       },
       methods: {
-          greet: function (key) {
-              list.snippets = snippets[key];
-              renderWhiteBoard(snippets[key][0]);
-          }
+        show: show
       }
   });
 }

@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<body>
+<div id="layout" class="content pure-g">
+    <div id="nav" class="pure-u">
+        <a href="#" class="nav-menu-button">Menu</a>
+        <div class="nav-inner">
+            <button class="primary-button pure-button">Compose</button>
+            <div class="pure-menu">
+                <ul class="pure-menu-list" id="cats">
+                    <li class="pure-menu-item" v-for="cat in cats" v-on:click="greet(cat.name)">
+                        <a href="#" class="pure-menu-link">{%raw%}{{ cat.name }}{%endraw%}</a>
+                    </li>
+                    <li class="pure-menu-heading">Links</li>
+                    <li class="pure-menu-item">
+                        <a href="#" class="pure-menu-link"><span class="email-label-personal"></span>Blog</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="#" class="pure-menu-link"><span class="email-label-work"></span>About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="list" class="pure-u-1">
+        <div class="email-item email-item-unread pure-g" v-for="snippet in snippets" v-on:click="show(snippet)">
+            <div class="pure-u-3-4">
+                <h4 class="email-subject">{%raw%} {{ snippet.title }} {%endraw%}</h4>
+            </div>
+        </div>
+    </div>
+    <div id="main" class="pure-u-1">
+        <div class="email-content">
+            <div class="email-content-header pure-g">
+                <div class="pure-u-1-2">
+                    <h1 class="email-content-title">{%raw%} {{ snippet.title }} {%endraw%}</h1>
+                    <!--<p class="email-content-subtitle">
+                        From <a>Tilo Mitra</a> at <span>3:56pm, April 3, 2012</span>
+                    </p>-->
+                </div>
+                <div class="email-content-controls pure-u-1-2">
+                    <button class="secondary-button pure-button">Reply</button>
+                    <button class="secondary-button pure-button">Forward</button>
+                    <!--<button class="secondary-button pure-button">Move to</button>-->
+                </div>
+            </div>
+            <div class="email-content-body" >
+                <p>
+                    {%raw%} {{{ content }}} {%endraw%}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
