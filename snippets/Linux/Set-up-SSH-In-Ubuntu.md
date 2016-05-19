@@ -4,7 +4,7 @@ title: 在Ubuntu上安装SSH
 
 电脑多了，换来换去麻烦，远程登录就很有必要了。
 
-## 安装`openssh-server`
+### 安装`openssh-server`
 
 ```shell
   sudo apt-get install openssh-server
