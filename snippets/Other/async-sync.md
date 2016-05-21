@@ -1,0 +1,18 @@
+---
+title: 同步异步/阻塞非阻塞
+referer: https://github.com/barretlee/snippets/blob/gh-pages/snippets/article/async-sync.md
+---
+
+**同步/异步（synchronization/asynchronization）**
+
+- 同步，就是在产生一个 调用 时，在没有得到结果之前，该 调用 就不会返回，一旦 调用 返回，就得到返回值了，是 调用者 主动等待这个 调用 的结果。
+- 异步，则是在 调用 发出后，这个 调用 就直接返回了，所以没有返回结果。之后， 被调用者 通过状态、通知等来通知 调用者 ，或者通过回调函数处理这个 调用 。
+
+**阻塞/非阻塞（blocking/non-blocking）**
+
+- 阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。
+- 非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程。
+
+虽然，看起来同步/异步和阻塞/非阻塞看起来有些相似，但是前者关注的是一种 消息通知机制 ，后者关注的是 程序在等待调用结果（消息、返回值）时的状态 ，所以两者没有必然联系。
+
+来源：[同步异步/阻塞非阻塞](https://github.com/barretlee/snippets/blob/gh-pages/snippets/article/async-sync.md)
