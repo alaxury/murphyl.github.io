@@ -27,3 +27,5 @@ referer: https://gist.github.com/tsabat/1498393
 ```bash
   sudo shutdown -r 0
 ```
+
+[参考文章](https://gist.github.com/tsabat/1498393)
